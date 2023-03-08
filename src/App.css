@@ -6,7 +6,6 @@
   text-transform: capitalize;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  transition: all 0.5s ease-in;
 }
 :root {
   --yellow: #f9ca24;
@@ -25,6 +24,9 @@ html a {
   display: block;
   /* padding: 20px; */
 }
+button {
+  transition: all 0.2s ease-in;
+}
 *::selection {
   background-color: var(--yellow);
 }
@@ -35,11 +37,11 @@ html a {
 }
 .project_subheading {
   display: flex;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 85%;
   margin: 10px 0;
+  padding: 10px 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -70,6 +72,7 @@ html a {
   /* about section */
   .portfolio-about .about-item {
     font-size: 4vw;
+    margin: 0 10rem;
   }
 
   /* education section */
@@ -88,7 +91,14 @@ html a {
   .Project {
     padding-left: 10px;
   }
-
+  .project-items {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .project_subheading {
+    flex-direction: column;
+    gap: 10px;
+  }
   /* contact section */
   .contact-info span {
     font-size: 5vw !important;
@@ -248,6 +258,10 @@ html a {
   font-size: xxx-large;
   color: var(--yellow);
 }
+.center {
+  left: 8rem;
+  position: relative;
+}
 .home-btm {
   padding: 10px;
   border-radius: 50px;
@@ -264,7 +278,23 @@ html a {
 .home-btm > a:hover {
   color: white;
 }
-.home-btm:hover {
+.project-btm > a:hover {
+  color: #ffffff;
+}
+.project-btm > a {
+  color: black;
+}
+.project-btm {
+  padding: 20px;
+  border-radius: 50px;
+  border: none;
+  min-width: 180px;
+  font-weight: 700;
+  text-transform: capitalize;
+  transition: 0.5s ease-in;
+}
+.home-btm:hover,
+.project-btm:hover {
   /* background-color: var(--yellow); */
   color: white;
   position: relative;
@@ -577,10 +607,10 @@ textarea {
 .Skill {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 60%;
-  margin: 50px auto;
   row-gap: 50px;
+  margin-top: 50px;
   min-height: 50vh;
+  justify-items: center;
 }
 .Skill > div {
   display: flex;
@@ -590,7 +620,7 @@ textarea {
   height: 100px;
   align-items: center;
 }
-.Skill > div i {
+/* .Skill > div i {
   height: 5rem;
   width: 5rem;
   position: absolute;
@@ -600,18 +630,20 @@ textarea {
   text-align: center;
   font-size: 18px;
   transform: translate(-45px, -45px);
-}
+} */
 .Skill > div img {
-  object-fit: cover;
-  border-radius: 15px;
+  object-fit: contain;
+  border-radius: 55%;
+  border: 5px solid #f9ca24;
 }
 
 ul {
   list-style: none;
-  margin: 20px;
+  margin: 20px 0;
 }
 li {
   font-size: 18px;
+  margin: 5px 0;
 }
 ul > li::before {
   content: "\2022";
@@ -659,7 +691,11 @@ h3 {
   gap: 50px;
   display: flex;
   margin: 20px 0px;
-  width: 90%;
+  /* width: 90%; */
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+.TechStack {
+  display: flex;
+  flex-wrap: wrap;
 }

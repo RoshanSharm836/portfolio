@@ -25,7 +25,7 @@ function Contact() {
             <i className="icon">
               <img alt="" src="./phone-call.png" />
             </i>
-            <span className="contact-title">7482984341</span>
+            <span className="contact-title">6207412616</span>
           </div>
           <div className="what">
             <i className="icon">
